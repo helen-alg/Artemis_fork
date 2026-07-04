@@ -397,6 +397,7 @@ export class CourseUpdateComponent implements OnInit {
      * intentionally does not carry organizations), so the diff is synced here before finalizing.
      */
     private onSaveSuccess(updatedCourse: Course | null) {
+        alert('Barrierefreiheits-Check: Kurs wurde erstellt!');
         if (updatedCourse?.id !== undefined && this.isAdmin()) {
             this.syncCourseOrganizations(updatedCourse.id).subscribe({
                 next: () => this.finalizeSave(updatedCourse),
